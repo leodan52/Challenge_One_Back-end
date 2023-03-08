@@ -2,20 +2,10 @@ import java.awt.EventQueue;
 
 import javax.swing.JOptionPane;
 
-
 public class TestConversor {
 	public static void main(String[] args) {
-//		ConversorMoneda conversor = new ConversorMoneda();
-//		
-//		conversor.setCantidad(200);
-//		conversor.setMonedaOrigen("usd");
-//		conversor.setMonedaDestino("mxn");
-//		
-//		System.out.println(conversor.ConvertirDivisas());
-		
+
 		String eleccion = mostrarMenuPrincipal();
-		
-		System.out.println(eleccion);
 		
 		if (eleccion == "Conversor de monedas") {
 			EventQueue.invokeLater(new Runnable() {

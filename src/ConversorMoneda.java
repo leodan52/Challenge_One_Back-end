@@ -4,11 +4,14 @@ public class ConversorMoneda {
 	private double cantidad;
 	private String monedaOrigen;
 	private String monedaDestino;
-	
+	private double tasa;
+	private double actualConversion = 0.0;
+	private String fechaActualización;
+
 	private TasaConversion tasas = new TasaConversion();
 
 	public ConversorMoneda() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public ConversorMoneda(double cantidad, String monedaOrigen, String monedaDestino) {
@@ -16,11 +19,13 @@ public class ConversorMoneda {
 		this.monedaOrigen = monedaOrigen;
 		this.monedaDestino = monedaDestino;
 	}
-	
+
 	public double ConvertirDivisas() {
-		double tasa = tasas.setTasa(this.monedaOrigen, this.monedaDestino);
+		this.tasa = tasas.setTasa(this.monedaOrigen, this.monedaDestino);
+		this.actualConversion = this.cantidad * this.tasa;
+		this.fechaActualización = tasas.getFecha();
 		
-		return this.cantidad*tasa;
+		return Math.round(this.actualConversion*1000.0)/1000.0;
 	}
 
 	public double getCantidad() {
@@ -46,5 +51,18 @@ public class ConversorMoneda {
 	public void setMonedaDestino(String monedaDestino) {
 		this.monedaDestino = monedaDestino;
 	}
+
+	public double getTasa() {
+		return Math.round(tasa*100000.0)/100000.0;
+	}
+
+	public double getActualConversion() {
+		return actualConversion;
+	}
+
+	public String getFechaActualización() {
+		return fechaActualización;
+	}
+	
 
 }

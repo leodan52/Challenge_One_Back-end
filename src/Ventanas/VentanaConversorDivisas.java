@@ -14,6 +14,11 @@ import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.border.CompoundBorder;
+import java.awt.Rectangle;
+import java.awt.BorderLayout;
 
 public class VentanaConversorDivisas {
 
@@ -55,14 +60,21 @@ public class VentanaConversorDivisas {
 	 */
 	private void initialize() {
 		frmConversorDeDivisas = new JFrame();
+		frmConversorDeDivisas.setBounds(new Rectangle(10, 0, 0, 0));
 		frmConversorDeDivisas.setTitle("Conversor de divisas");
 		frmConversorDeDivisas.setBounds(100, 100, 757, 291);
 		frmConversorDeDivisas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmConversorDeDivisas.getContentPane().setLayout(new GridLayout(2, 0, 0, 0));
+		frmConversorDeDivisas.getContentPane().setLayout(new BorderLayout(0, 0));
+
+		JPanel mainContenedor = new JPanel();
+		mainContenedor.setBorder(new EmptyBorder(5, 5, 5, 5));
+		frmConversorDeDivisas.getContentPane().add(mainContenedor);
+		mainContenedor.setLayout(new GridLayout(2, 1, 0, 0));
 
 		JPanel panelEntrada = new JPanel();
-		panelEntrada.setBorder(new EmptyBorder(10, 5, 10, 5));
-		frmConversorDeDivisas.getContentPane().add(panelEntrada);
+		mainContenedor.add(panelEntrada);
+		panelEntrada
+				.setBorder(new CompoundBorder(new LineBorder(new Color(128, 128, 128)), new EmptyBorder(5, 3, 5, 5)));
 		panelEntrada.setLayout(new GridLayout(3, 4, 10, 5));
 
 		JLabel lblIngresaLaCantidad = new JLabel("Ingresa la cantidad");
@@ -117,9 +129,9 @@ public class VentanaConversorDivisas {
 		panelEntrada.add(botonConversor);
 
 		JPanel panelSalida = new JPanel();
+		mainContenedor.add(panelSalida);
 		panelSalida.setBorder(new EmptyBorder(5, 5, 5, 5));
-		frmConversorDeDivisas.getContentPane().add(panelSalida);
-		panelSalida.setLayout(new GridLayout(4, 0, 5, 0));
+		panelSalida.setLayout(new GridLayout(3, 0, 5, 0));
 
 		Component verticalStrut = Box.createVerticalStrut(20);
 		panelSalida.add(verticalStrut);
@@ -148,35 +160,43 @@ public class VentanaConversorDivisas {
 		panelSalida.add(salidaUnidadDivisa);
 
 		JLabel lblChallengeOne = new JLabel("Challenge One Back-end - Java G4  ||  Por: Leonardo D. Santiago");
+		frmConversorDeDivisas.getContentPane().add(lblChallengeOne, BorderLayout.SOUTH);
 		lblChallengeOne.setFont(new Font("Dialog", Font.PLAIN, 11));
 		lblChallengeOne.setHorizontalAlignment(SwingConstants.RIGHT);
-		panelSalida.add(lblChallengeOne);
 	}
 
 	public JTextField getCajaEntrada() {
 		return cajaEntrada;
 	}
+
 	public JComboBox<String> getEntradaDivisaOrigen() {
 		return entradaDivisaOrigen;
 	}
+
 	public JButton getBotonInversor() {
 		return botonInversor;
 	}
+
 	public JComboBox<String> getEntradaDivisaDestino() {
 		return entradaDivisaDestino;
 	}
+
 	public JButton getBotonConversor() {
 		return botonConversor;
 	}
+
 	public JLabel getLabelSalida() {
 		return labelSalida;
 	}
-	public JButton getBtnNewButton() {
+
+	public JButton getBotonCopiar() {
 		return botonCopiar;
 	}
+
 	public JLabel getSalidaUnidadDivisa() {
 		return salidaUnidadDivisa;
 	}
+
 	public JFrame getFrmConversorDeDivisas() {
 		return frmConversorDeDivisas;
 	}
