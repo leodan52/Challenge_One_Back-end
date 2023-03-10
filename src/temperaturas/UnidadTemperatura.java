@@ -10,7 +10,9 @@ public abstract class UnidadTemperatura {
 	public abstract UnidadFahrenheit toFahrenheit();
 
 	public abstract UnidadKelvin toKelvin();
-	
+
+	public abstract UnidadRankine toRankine();
+
 	public String representacionUnidad() {
 		return modulo + " ° " + Unidad;
 	}
