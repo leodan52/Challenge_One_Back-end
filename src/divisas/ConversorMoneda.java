@@ -1,4 +1,5 @@
 package divisas;
+
 public class ConversorMoneda {
 
 	private double cantidad;
@@ -24,8 +25,8 @@ public class ConversorMoneda {
 		this.tasa = tasas.setTasa(this.monedaOrigen, this.monedaDestino);
 		this.actualConversion = this.cantidad * this.tasa;
 		this.fechaActualización = tasas.getFecha();
-		
-		return Math.round(this.actualConversion*1000.0)/1000.0;
+
+		return Math.round(this.actualConversion * 1000.0) / 1000.0;
 	}
 
 	public double getCantidad() {
@@ -53,7 +54,7 @@ public class ConversorMoneda {
 	}
 
 	public double getTasa() {
-		return Math.round(tasa*100000.0)/100000.0;
+		return Math.round(tasa * 100000.0) / 100000.0;
 	}
 
 	public double getActualConversion() {
@@ -63,6 +64,5 @@ public class ConversorMoneda {
 	public String getFechaActualización() {
 		return fechaActualización;
 	}
-	
 
 }
