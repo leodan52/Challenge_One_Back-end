@@ -1,6 +1,6 @@
-package Ventanas;
+package ventanas;
 
-import Ventanas.keyadapter.KeyAdapterConversor;
+import ventanas.keyadapter.KeyAdapterConversor;
 
 public class VentanaTemperatura extends VentanaConversorTemperatura {
 
