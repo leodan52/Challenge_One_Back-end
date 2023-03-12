@@ -17,6 +17,12 @@ public abstract class UnidadTemperatura {
 		return modulo + " ° " + Unidad;
 	}
 
+	public double getModulo(int decimales) {
+		double potencia = Math.pow(10.0, (double) decimales);
+		
+		return Math.round(modulo*potencia)/potencia;
+	}
+	
 	public double getModulo() {
 		return modulo;
 	}
