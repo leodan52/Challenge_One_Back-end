@@ -2,8 +2,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JOptionPane;
 
-import Ventanas.VentanaDivisas;
-import Ventanas.VentanaTemperatura;
+import ventanas.VentanaDivisas;
+import ventanas.VentanaTemperatura;
 
 public class Main {
 	public static void main(String[] args) {
