@@ -57,7 +57,7 @@ public class VentanaDivisas extends VentanaConversorDivisas {
 				divisaDestino.setSelectedItem(seleccionadoOrigen);
 			}
 		});
-		
+
 		this.getBotonInversor().addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -75,7 +75,7 @@ public class VentanaDivisas extends VentanaConversorDivisas {
 		JLabel salida = this.getLabelSalida();
 		JLabel salidaUnidadCambio = this.getSalidaUnidadDivisa();
 		JButton copiar = this.getBotonCopiar();
-		
+
 		this.getBotonConversor().addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -91,7 +91,7 @@ public class VentanaDivisas extends VentanaConversorDivisas {
 			public void actionPerformed(ActionEvent e) {
 				CharSequence seleccionadoOrigen = (CharSequence) divisaOrigen.getSelectedItem();
 				CharSequence seleccionadoDestino = (CharSequence) divisaDestino.getSelectedItem();
-				
+
 				String origen = "", destino = "";
 				double conversion, tasa;
 
@@ -103,7 +103,7 @@ public class VentanaDivisas extends VentanaConversorDivisas {
 				Matcher matcherOrigen = pattern.matcher(seleccionadoOrigen);
 				Matcher matcherDestino = pattern.matcher(seleccionadoDestino);
 				Double entradaCantidad;
-				
+
 				try {
 					entradaCantidad = Double.valueOf(entrada.getText());
 					if (entradaCantidad < 0) {

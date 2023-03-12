@@ -14,7 +14,6 @@ public class VentanaTemperatura extends VentanaConversorTemperatura {
 
 	}
 
-
 	private void agregarKeyTyped() {
 		this.getCampoCelsius().addKeyListener(new KeyAdapterConversor(this.getCampoCelsius(), this.getCampoFahrenheit(),
 				this.getCampoKelvin(), this.getCampoRankine()));

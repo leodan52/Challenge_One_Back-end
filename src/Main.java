@@ -22,7 +22,7 @@ public class Main {
 				}
 			});
 		} else if (eleccion == "Conversor de temperaturas") {
-			
+
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
@@ -33,7 +33,7 @@ public class Main {
 					}
 				}
 			});
-			
+
 		}
 
 	}
