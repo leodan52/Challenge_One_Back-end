@@ -1,4 +1,4 @@
-package Ventanas.keyadapter;
+package ventanas.keyadapter;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -13,6 +13,7 @@ public class KeyAdapterConversor extends KeyAdapter {
 
 	private JTextField padre;
 	private JTextField[] cajas;
+	private int numDecimales = 2;
 
 	public KeyAdapterConversor(JTextField padre, JTextField... cajas) {
 		this.padre = padre;
@@ -44,10 +45,14 @@ public class KeyAdapterConversor extends KeyAdapter {
 		for (JTextField caja : cajas) {
 			try {
 				entradaUnidad.setModulo(Double.valueOf(entradaString));
-				caja.setText(convertirUnidad(caja.getName(), entradaUnidad).getModulo() + "");
+				caja.setText(convertirUnidad(caja.getName(), entradaUnidad).getModulo(this.numDecimales) + "");
 			} catch (NumberFormatException exc) {
 
-				caja.setText("ERROR");
+				if (padre.getText().strip().equals("")) {
+					caja.setText("");
+				} else {
+					caja.setText("ERROR");
+				}
 
 			}
 
