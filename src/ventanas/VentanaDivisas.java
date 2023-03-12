@@ -1,10 +1,12 @@
-package Ventanas;
+package ventanas;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,6 +57,15 @@ public class VentanaDivisas extends VentanaConversorDivisas {
 				divisaDestino.setSelectedItem(seleccionadoOrigen);
 			}
 		});
+		
+		this.getBotonInversor().addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					getBotonInversor().doClick();
+				}
+			}
+		});
 	}
 
 	private void editarBotonConversor() {
@@ -64,8 +75,18 @@ public class VentanaDivisas extends VentanaConversorDivisas {
 		JLabel salida = this.getLabelSalida();
 		JLabel salidaUnidadCambio = this.getSalidaUnidadDivisa();
 		JButton copiar = this.getBotonCopiar();
+		
+		this.getBotonConversor().addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					getBotonConversor().doClick();
+				}
+			}
+		});
 
 		this.getBotonConversor().addActionListener(new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CharSequence seleccionadoOrigen = (CharSequence) divisaOrigen.getSelectedItem();
