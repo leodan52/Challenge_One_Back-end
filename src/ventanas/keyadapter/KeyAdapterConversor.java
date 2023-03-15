@@ -23,8 +23,8 @@ public class KeyAdapterConversor extends KeyAdapter {
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
-		String entradaString = padre.getText() + e.getKeyChar();
+	public void keyReleased(KeyEvent e) {
+		String entradaString = padre.getText();
 		String entradaTipo = padre.getName();
 		UnidadTemperatura entradaUnidad = null;
 
