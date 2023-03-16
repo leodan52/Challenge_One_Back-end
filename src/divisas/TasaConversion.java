@@ -14,6 +14,15 @@ import java.util.Map;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
+/**
+ * Clase que extraer las tasas actuales de algunas divisas para su conversión.
+ * Usa Una API para ese propósito: Exchange Rates Data API de APILayer
+ * 
+ * @author Santiago García, Leonardo D.
+ * @see https://apilayer.com/marketplace/exchangerates_data-api
+ *
+ */
+
 public class TasaConversion {
 
 	private Map<String, Double> conversor = new HashMap<>();
@@ -22,6 +31,12 @@ public class TasaConversion {
 	private boolean success;
 	private String fecha;
 	private JSONObject tasasJSON;
+
+	/**
+	 * Constructor de la clase. Pide las tasas actializadas a la API con base en
+	 * USD, y si falla, define unas previamente cargadas.
+	 * 
+	 */
 
 	public TasaConversion() {
 
@@ -50,6 +65,14 @@ public class TasaConversion {
 		}
 	}
 
+	/**
+	 * Módulo que se encarga de calcular la tasa de cambio en un intercambio de dos
+	 * divisas.
+	 * 
+	 * @param cantidadOrigen  Clave de la divisa inicial
+	 * @param cantidadDestino Clave de la divisa final
+	 * @return Regresa la tasa de cambio para convertir la divisa inicial a la final
+	 */
 	public double setTasa(String cantidadOrigen, String cantidadDestino) {
 		double tasaOrigen = this.conversor.get(cantidadOrigen);
 		double tasaDestino = this.conversor.get(cantidadDestino);
@@ -57,6 +80,15 @@ public class TasaConversion {
 		return tasaDestino / tasaOrigen;
 
 	}
+
+	/**
+	 * Módulo que se encarga de la comunicación con la API. Obtiene las tasas así
+	 * como el codigo de respuesta
+	 * 
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 
 	private void pedirTasasAPI() throws URISyntaxException, IOException, InterruptedException {
 		HttpClient client = HttpClient.newBuilder().build();
@@ -71,6 +103,11 @@ public class TasaConversion {
 		this.codigoStatus = respuesta.statusCode();
 	}
 
+	/**
+	 * Procesa el String en formato JSON que se recibe de la API y lo guarda en un
+	 * Objeto JSONObject para la lectura mediante claves
+	 * 
+	 */
 	private void procesarJSON() {
 		Object obt = JSONValue.parse(this.jsonRespuesta);
 		JSONObject json = (JSONObject) obt;

@@ -19,6 +19,14 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+/**
+ * Clase que define la estructura de la ventana para el conversor de divisas.
+ * Esta clase no define funcionalidades, es solo el esqueleto.
+ * 
+ * @author Santiago García, Leonardo D.
+ *
+ */
+
 public class VentanaConversorDivisas {
 
 	private JFrame frmConversorDeDivisas;
