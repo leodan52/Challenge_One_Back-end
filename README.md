@@ -20,7 +20,7 @@ Siga esta liga para descargar la versión 11 del JDK: https://www.oracle.com/co/
 
 Usted puede instalar la versión 11 del JDK haciendo click en la siguiente liga: https://www.oracle.com/co/java/technologies/downloads/#java11-linux
 
-Sin embargo, si usa Ubuntu o una distribucióm derivada, puede optar por una versión derivada desde los repositorios siguiendo el siguiente comando
+Sin embargo, si usa Ubuntu o una distribución derivada, puede optar por una versión derivada desde los repositorios siguiendo el siguiente comando
 
 >~~~
 > sudo apt-get install openjdk-11-jre
@@ -30,7 +30,7 @@ Se incluye un ejecutable JAR, `conversor.jar`, para probar la aplicación sin de
 
 ## Funcionamiento
 
-Al ejecutar el proyecto lo primero que se desplegará será una ventana con un menú para elegir el conversor que se desea utilizar. Cuenta con solo dos opciones: el Conversor de Divisas del Challenge principal, y el Conversor de Temperaturas que funge como estra.
+Al ejecutar el proyecto lo primero que se desplegará será una ventana con un menú para elegir el conversor que se desea utilizar. Cuenta con solo dos opciones: el Conversor de Divisas del Challenge principal, y el Conversor de Temperaturas que funge como extra.
 
 ![vokoscreen-2023-03-16_19-40-15_AdobeExpress](https://user-images.githubusercontent.com/109176490/225792828-7a46ef55-ccb2-4e70-a97b-e4f5df4c6eb9.gif)
 
@@ -38,7 +38,7 @@ El usuario podría elegir entre cualquiera de los dos, y consiguientemente se ab
 
 ### Conversor de divisas
 
-Este programa puede convertir entre seis diferentes divisas: *Peso mexicano (MXN)*, *Dólar estadounidense (USD)*, *Euro (EUR)*, *Libra esterlina (GBP)*, *Yen japonés (JPY)* y *Won coreano (KRW)*. Las tasas de cambio se obtienen mendiante la API [Exchange Rates Data API](https://apilayer.com/marketplace/exchangerates_data-api). El funcionamiento interno consiste en obtener las equivalencias con respecto al dólar estadounidense, y mediante fórmulas obtener otras tasas.
+Este programa puede convertir entre seis diferentes divisas: *Peso mexicano (MXN)*, *Dólar estadounidense (USD)*, *Euro (EUR)*, *Libra esterlina (GBP)*, *Yen japonés (JPY)* y *Won coreano (KRW)*. Las tasas de cambio se obtienen mediante la API [Exchange Rates Data API](https://apilayer.com/marketplace/exchangerates_data-api). El funcionamiento interno consiste en obtener las equivalencias con respecto al dólar estadounidense, y mediante fórmulas obtener otras tasas.
 
 ![gif2](https://user-images.githubusercontent.com/109176490/225793203-9c7a6fa4-e989-40bf-9229-f60a866b8d3e.gif)
 
@@ -57,21 +57,21 @@ Como agregado al proyecto, decidí incluir un conversor de Temperatura. Como se 
 
 Como se muestra en la figura anterior, el programa admite valores numéricos para la realización de las conversiones, pero si se ingresa un valor diferente, muestra un mensaje de error en los campos correspondientes.
 
-## Construido con 
+## Construido con
 
 La construcción del programa se realizó con JavaSE 11 ya que se utilizó el método nativo `http` para la comunicación con la API. Así mismo se usó una librería externa más:
 
 * [json-simple](https://code.google.com/archive/p/json-simple/) Para el manejo de String con formato JSON
 * miglayout15-swing
 
-Estas librerias están en la carpeta `lib/` listas para importar y ejecutar el proyecto en su IDE favorito.
+Estas librerías están en la carpeta `lib/` listas para importar y ejecutar el proyecto en su IDE favorito.
 
 ## Información del autor
 
-Mi nombre es Leonardo D. Santiago Garcia, y me estoy esforzando mucho para lograr construir una carrera en el área de la tecnología. Más información sobre mí en [LinkedIn](https://www.linkedin.com/in/leodansantiago/).
+Mi nombre es Leonardo D. Santiago García, y me estoy esforzando mucho para lograr construir una carrera en el área de la tecnología. Más información sobre mí en [LinkedIn](https://www.linkedin.com/in/leodansantiago/).
 
 ## Agradecimientos
 
 * Programa [ONE - Oracle Next Education](https://www.oracle.com/mx/education/oracle-next-education/)
 * [Alura Latam](https://www.aluracursos.com/)
-* Y a todos los instructores que acompañan al grupo 4 durante nuesta formación.
+* Y a todos los instructores que acompañan al grupo 4 durante nuestra formación.
