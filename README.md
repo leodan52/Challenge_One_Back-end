@@ -20,7 +20,7 @@ Siga esta liga para descargar la versión 11 del JDK: https://www.oracle.com/co/
 
 Usted puede instalar la versión 11 del JDK haciendo click en la siguiente liga: https://www.oracle.com/co/java/technologies/downloads/#java11-linux
 
-Sin embargo, si usa Ubuntu o una distribución derivada, puede optar por una versión derivada desde los repositorios siguiendo el siguiente comando
+Sin embargo, si usa Ubuntu o una distribución derivada, puede optar por una versión alternativa del JVM desde los repositorios usando el siguiente comando
 
 >~~~
 > sudo apt-get install openjdk-11-jre
@@ -46,7 +46,7 @@ Las pruebas anteriores se realizaron con las tasas de cambio del día 16 de marz
 
 ### Conversor de Temperatura
 
-Como agregado al proyecto, decidí incluir un conversor de Temperatura. Como se mostrará más adelante, el diseño tiene un formato diferente al Conversor de divisas. La conversión se hace en tiempo real mientras el usuario ingresa la cantidad a convertir. Las conversiones se realizan entre las unidades de temperatura más usadas en el mundo, Celsius[^1], Fahrenheit[^2] y Kelvin[^3], así como una unidad extra un poco más desconocida llamada Rankine[^4].
+Como agregado al proyecto, decidí incluir un conversor de Temperatura. Como se mostrará más adelante, el diseño tiene un formato diferente al Conversor de divisas. La conversión se hace en tiempo real mientras el usuario ingresa la cantidad a convertir. Las conversiones se realizan entre las unidades de temperatura más usadas en el mundo, Celsius[^1], Fahrenheit[^2] y Kelvin[^3], así como una unidad extra menos conocida llamada Rankine[^4].
 
 [^1]: Para más información visite https://es.wikipedia.org/wiki/Grado_Celsius
 [^2]: Para más información visite https://es.wikipedia.org/wiki/Grado_Fahrenheit
